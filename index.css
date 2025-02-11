@@ -1,0 +1,305 @@
+/* Estilo global */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    cursor: url('dragon.png'), auto;
+}
+
+
+/* Canvas de animación */
+.animacion {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupa toda la ventana inicialmente */
+    background-color: #000;
+}
+
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Contenedor de texto y botón dentro de la animación */
+.contenido-animacion {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el contenido */
+    color: white;
+    text-align: center;
+    z-index: 10; /* Asegura que el texto esté encima de las partículas */
+}
+
+/* Estilo del título */
+.contenido-animacion h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* Estilo del párrafo */
+.contenido-animacion p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilo del botón */
+.btn-acerca-de-mi {
+    display: inline-block;
+    background-color: #1bfcdd;
+    color: #333;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-acerca-de-mi:hover {
+    background-color: #17b6b3;
+}
+
+
+/* Sección de introducción */
+.intro {
+    padding: 2rem;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.intro h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font: small-caps 100%/200% serif;
+}
+
+.intro h3 {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Sección de proyectos */
+.proyectos {
+    padding: 2rem;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+}
+
+/* Título */
+.proyectos h2 {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-family: serif;
+    text-transform: uppercase;
+}
+
+/* Contenedor flexible */
+.proyectos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* Tarjetas */
+.proyecto {
+    flex: 1 1 calc(33.333% - 2rem); /* 3 columnas en pantallas grandes */
+    max-width: 350px;
+    min-width: 280px;
+    text-align: center;
+}
+
+/* Estilo de las tarjetas */
+.proyecto-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proyecto-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Evita distorsión */
+    border-radius: 10px;
+    opacity: 0.8;
+    transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+}
+
+/* Efecto hover */
+.proyecto-card:hover img {
+    transform: scale(1.1);
+    opacity: 1;
+    filter: brightness(1.2);
+}
+
+.proyecto-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+}
+
+/* Información del proyecto */
+.proyecto-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font: small-caps 100%/200% serif;
+    right: 0;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.85);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: #ffffff;
+    border-radius: 0 0 10px 10px;
+}
+
+.proyecto-card:hover .proyecto-info {
+    opacity: 1;
+}
+
+.proyecto-info h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font: small-caps 100%/200% serif;
+}
+
+/* Enlace */
+.proyecto-info a {
+    color: #00aaff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.proyecto-info a:hover {
+    color: #66d9ff;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+    .proyecto {
+        flex: 1 1 calc(50% - 2rem); /* 2 columnas en tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .proyecto {
+        flex: 1 1 100%; /* 1 columna en móviles */
+    }
+
+    .proyectos h2 {
+        font-size: 2rem;
+    }
+}
+
+
+/* Nueva Sección Habilidades */
+.habilidades {
+    padding: 2rem;
+    background-color: #333;
+    color: #ffffff;
+}
+
+.habilidades h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.habilidades ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.habilidades ul li {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+/* Nueva Sección Contacto */
+.contacto {
+    padding: 2rem;
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contacto p {
+    font-size: 1.2rem;
+}
+
+.contacto a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Imagen con efecto */
+.imagen-efecto {
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    background-color: #000;
+    clip-path: polygon(0 0, 70% 0, 100% 100%, 30% 100%);
+    overflow: hidden;
+}
+
+.imagen-efecto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: polygon(0 0, 70% 0, 100% 100%, 30% 100%);
+}
+
+/* Estilos para los iconos de redes sociales */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 1rem;
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.social-item:hover {
+    background-color: #1bfcdd;
+    transform: scale(1.1);
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+}

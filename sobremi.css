@@ -1,0 +1,154 @@
+.sobremi {
+    padding: 2rem;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-align: center;
+    font: small-caps 100%/200% serif;
+}
+
+.sobremi h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.sobremi p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    text-align: center;
+    opacity: 0; /* Ocultar el texto al inicio */
+    transition: opacity 0.5s ease-in-out;
+    color: transparent; /* Iniciar con el color transparente */
+}
+
+.sobremi .smoke-visible {
+    opacity: 1; /* Hacer visible el texto */
+    animation: smokeEffect 3s ease forwards; /* Activar la animación de humo */
+}
+
+@keyframes smokeEffect {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+        color: transparent;
+    }
+    50% {
+        transform: translateY(-10px);
+        opacity: 0.8;
+        color: #3be4ca; /* Color celeste neon */
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        color: #3be4ca;
+    }
+}
+
+.container1 {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: rotateGallery 10s infinite linear;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container1 span {
+    position: absolute;
+    width: 120px;
+    height: 180px;
+    background-color: #3be4ca;
+    transform-origin: center;
+    transform-style: preserve-3d;
+}
+
+.container1 span::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to bottom, rgba(8, 235, 231, 0.874), rgba(255, 255, 255, 0));
+    transform: scaleY(-1);
+    border-radius: 20px;
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.container1 span img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0px;
+    filter: saturate(180%);
+}
+
+/* Posiciona cada imagen en un plano diferente */
+.container1 span:nth-child(1) {
+    transform: rotateY(0deg) translateZ(300px);
+}
+
+.container1 span:nth-child(2) {
+    transform: rotateY(45deg) translateZ(300px);
+}
+
+.container1 span:nth-child(3) {
+    transform: rotateY(90deg) translateZ(300px);
+}
+
+.container1 span:nth-child(4) {
+    transform: rotateY(135deg) translateZ(300px);
+}
+
+.container1 span:nth-child(5) {
+    transform: rotateY(180deg) translateZ(300px);
+}
+
+.container1 span:nth-child(6) {
+    transform: rotateY(225deg) translateZ(300px);
+}
+
+.container1 span:nth-child(7) {
+    transform: rotateY(270deg) translateZ(300px);
+}
+
+.container1 span:nth-child(8) {
+    transform: rotateY(315deg) translateZ(300px);
+}
+
+@keyframes rotateGallery {
+    0% {
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100% {
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .container1 {
+        max-width: 300px;
+        height: 300px;
+    }
+    .container1 span {
+        width: 100px;
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container1 {
+        max-width: 250px;
+        height: 250px;
+    }
+    .container1 span {
+        width: 80px;
+        height: 120px;
+    }
+}

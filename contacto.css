@@ -1,0 +1,155 @@
+.contacto {
+    padding: 50px;
+    text-align: center;
+    font: small-caps 100%/200% serif;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten si la pantalla es pequeña */
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    font: small-caps 100%/200% serif;
+}
+
+.contact-info {
+    flex: 1;
+    position: relative; /* Contenedor de la imagen con posición relativa */
+    max-width: 640px; /* Se asegura de que la imagen no crezca demasiado */
+    font: small-caps 100%/200% serif;
+}
+
+.contact-img-container {
+    position: relative; /* Se necesita para posicionar los iconos dentro de la imagen */
+}
+
+.contact-img {
+    width: 100%; /* Hace que la imagen sea responsiva */
+    max-width: 640px; /* Establece un máximo para la imagen */
+    height: auto; /* Mantiene la relación de aspecto */
+    margin-bottom: 20px;
+    filter: blur(5px);
+    filter: grayscale(80%);
+}
+
+.social-icons {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    width: 100%; /* Para que se ajusten al contenedor */
+}
+
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    width: 90%; /* Ajusta el ancho */
+    max-width: 400px; /* Máximo tamaño */
+    text-align: center;
+    justify-content: center;
+}
+
+.social-item:hover {
+    background-color: #1bfcdd;
+    transform: scale(1.05);
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.contact-form {
+    flex: 1;
+    max-width: 800px;
+    text-align: left;
+    margin-top: 20px; /* Asegura que el formulario no se superponga a la imagen */
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #17b6b3;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #4f5255;
+}
+
+/* Media queries para hacer que el diseño sea más flexible en pantallas pequeñas */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Coloca los elementos en una sola columna en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .contact-info {
+        max-width: 100%; /* Deja que la imagen ocupe todo el ancho disponible */
+    }
+
+    .contact-form {
+        max-width: 100%;
+    }
+
+    .social-icons {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    .social-item {
+        font-size: 1rem;
+        padding: 10px;
+        max-width: 300px; /* Reduce el tamaño en pantallas más pequeñas */
+    }
+
+    .social-icon {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem; /* Hace más pequeño el tamaño de fuente en campos de texto */
+    }
+
+    .contact-form button {
+        font-size: 0.9rem; /* Reduce el tamaño del botón en pantallas muy pequeñas */
+    }
+
+    .social-item {
+        font-size: 0.9rem;
+        padding: 8px;
+        max-width: 280px;
+    }
+}

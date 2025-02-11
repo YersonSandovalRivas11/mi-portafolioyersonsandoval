@@ -1,0 +1,66 @@
+/* Estilo general de la sección */
+
+/* Estilo del título */
+.habilidades h2 {
+    font: small-caps 100%/200% serif;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.habilidades h4 {
+    text-align: center;
+    font: small-caps 100%/200% serif;
+}
+
+/* Contenedor de columnas */
+.habilidades-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    font: small-caps 100%/200% serif;
+}
+
+/* Columna para las habilidades */
+.columna {
+    flex: 1;
+}
+
+/* Estilo de las barras de habilidad */
+.barra-habilidad {
+    margin: 20px 0;
+}
+
+.barra {
+    background-color: #444;
+    border-radius: 10px;
+    height: 15px;
+    width: 100%;
+    position: relative;
+}
+
+.progreso {
+    background-color: #00e5ff;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+    width: 0%; /* Inicialmente en 0% */
+    transition: width 1s ease-out;
+}
+
+/* Etiquetas de habilidad */
+.barra-habilidad label {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/* Efecto hover de las barras */
+.barra-habilidad:hover .progreso {
+    background-color: #565455;
+    box-shadow: 0 0 15px rgba(86, 83, 85, 0.8);
+}
